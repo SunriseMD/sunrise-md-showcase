@@ -6,17 +6,17 @@ import { portfolio } from "@/lib/site-config";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — SunriseMD" },
+      { title: "Advising Portfolio — SunriseMD" },
       {
         name: "description",
         content:
-          "A selection of healthcare and health technology companies SunriseMD has partnered with.",
+          "A selection of healthcare and health technology companies SunriseMD has advised.",
       },
-      { property: "og:title", content: "Portfolio — SunriseMD" },
+      { property: "og:title", content: "Advising Portfolio — SunriseMD" },
       {
         property: "og:description",
         content:
-          "A selection of healthcare and health technology companies SunriseMD has partnered with.",
+          "A selection of healthcare and health technology companies SunriseMD has advised.",
       },
     ],
   }),
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/portfolio")({
 function PortfolioPage() {
   return (
     <PageShell>
-      <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">Portfolio</h1>
+      <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">Advising Portfolio</h1>
       <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
         Companies I've partnered with
       </p>
