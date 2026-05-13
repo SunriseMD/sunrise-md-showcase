@@ -4,6 +4,8 @@ import { PageShell } from "@/components/PageShell";
 import malawiOxygenImg from "@/assets/malawi-oxygen-repair.jpg";
 import pneumaShoePrototypeImg from "@/assets/pneumashoe-prototype.jpg";
 import pneumaShoeDisplayImg from "@/assets/pneumashoe-display.jpg";
+import atsAwardPresentationImg from "@/assets/ats-award-presentation.jpg";
+import atsAwardCheckImg from "@/assets/ats-award-check.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -72,9 +74,24 @@ const sections = [
   {
     title: "Outcomes Research & Clinical Due Diligence",
     subtitle: "Evaluating high-stakes decisions with evidence",
+    gallery: {
+      attachAfterParagraph: 1,
+      images: [
+        {
+          src: atsAwardPresentationImg,
+          alt: "Presenting machine-learning research on donor lung discard at the American Thoracic Society conference.",
+          caption: "Presenting the Machine Learning Lung Allograft Discard Risk Index at ATS.",
+        },
+        {
+          src: atsAwardCheckImg,
+          alt: "Receiving the ATS Public Advisory Roundtable Scholarship award.",
+          caption: "Receiving the ATS Public Advisory Roundtable Scholarship for the Lung Allograft Discard Risk Index.",
+        },
+      ],
+    },
     body: [
       "My research has also focused on high-stakes clinical decisions where data, uncertainty, and resource constraints intersect.",
-      "In transplantation, I helped develop organ discard risk indices designed to better understand why donor organs are accepted or discarded. This work included research on pediatric liver allograft discard, heart transplantation discard risk, and machine-learning approaches to donor lung discard.",
+      "In transplantation, I helped develop organ discard risk indices designed to better understand why donor organs are accepted or discarded. This work included research on pediatric liver allograft discard, heart transplantation discard risk, and machine-learning approaches to donor lung discard. The lung discard work was recognized with the American Thoracic Society Public Advisory Roundtable Scholarship.",
       "This research strengthened the way I approach due diligence in healthcare. When evaluating a clinical product, intervention, or system-level strategy, the key questions are rarely just, \u201CDoes this work?\u201D The better questions are:",
       "For whom does it work? Under what conditions? Compared to what? At what cost? And what would it take to implement it safely and sustainably?",
       "Those are the questions that connect outcomes research to real-world decision-making.",
