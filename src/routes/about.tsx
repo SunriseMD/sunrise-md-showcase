@@ -160,6 +160,23 @@ function AboutPage() {
                     {item.heading}
                   </h3>
                 )}
+                {section.gallery && section.gallery.attachAfterParagraph === idx && (
+                  <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {section.gallery.images.map((img) => (
+                      <figure key={img.src}>
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
+                          loading="lazy"
+                        />
+                        <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                          {img.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
               </Fragment>
             ))}
             <div className="clear-both" />
