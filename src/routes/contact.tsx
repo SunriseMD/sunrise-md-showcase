@@ -40,7 +40,7 @@ function ContactPage() {
     {
       Icon: FileText,
       label: "CV",
-      value: "Download CV (PDF)",
+      value: "Download CV",
       href: siteConfig.cvUrl,
       external: true,
     },
