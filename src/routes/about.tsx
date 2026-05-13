@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
         content:
           "Tahir Hafeez Malik, MD — pulmonary, critical care, and sleep medicine fellow and Chief Fellow in NYC. Founder of SunriseMD healthcare consulting.",
       },
-      { property: "og:title", content: "About — SunriseMD" },
+      { property: "og:title", content: "About Tahir — SunriseMD" },
       {
         property: "og:description",
         content:
