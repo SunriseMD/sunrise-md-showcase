@@ -1,5 +1,7 @@
+import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
+import malawiOxygenImg from "@/assets/malawi-oxygen-concentrators.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -35,6 +37,12 @@ const sections = [
   {
     title: "Global Health & Implementation Science",
     subtitle: "Designing interventions around real-world constraints",
+    image: {
+      src: malawiOxygenImg,
+      alt: "Rows of oxygen concentrators stored in a workshop in Malawi, awaiting repair and assessment.",
+      caption: "Oxygen concentrators we worked on repairing in Malawi.",
+      attachToParagraph: 2,
+    },
     body: [
       "My global health work has focused on a central implementation question: how do we design healthcare interventions that are not only evidence-based, but feasible in the environments where they need to work?",
       "During residency at NYU, I worked with Dr. Rajesh Vedanthan's global health lab studying whether air purifiers could affect the progression of heart failure in India. As part of the Exposures Committee, I helped design study protocols with long-term human-resource and financial constraints in mind. Through the Capacity Building Committee, I contributed to coursework and SMART goals intended to strengthen local research infrastructure in India. This work was supported by a $20,000 Institutes of Health Collaboration grant and deepened my interest in implementation science, capacity building, and pragmatic evaluation in low- and middle-income settings.",
@@ -110,10 +118,26 @@ function AboutPage() {
           <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
             {section.subtitle}
           </p>
-          <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/80 sm:text-lg">
+          <div className="mt-6 text-base leading-relaxed text-foreground/80 sm:text-lg [&>p+p]:mt-5">
             {section.body.map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
+              <Fragment key={idx}>
+                {section.image && section.image.attachToParagraph === idx && (
+                  <figure className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]">
+                    <img
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
+                      loading="lazy"
+                    />
+                    <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                      {section.image.caption}
+                    </figcaption>
+                  </figure>
+                )}
+                <p>{paragraph}</p>
+              </Fragment>
             ))}
+            <div className="clear-both" />
           </div>
         </section>
       ))}
