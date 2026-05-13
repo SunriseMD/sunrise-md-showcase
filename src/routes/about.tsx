@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
-import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -9,40 +8,59 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Tahir Hafeez Malik, MD — pulmonary, critical care, and sleep medicine fellow and Chief Fellow in NYC. Founder of SunriseMD healthcare consulting.",
+          "Tahir Hafeez Malik, MD — pulmonary, critical care, and sleep medicine physician at Mount Sinai. Founder of SunriseMD healthcare consulting.",
       },
       { property: "og:title", content: "About Tahir — SunriseMD" },
       {
         property: "og:description",
         content:
-          "Tahir Hafeez Malik, MD — pulmonary, critical care, and sleep medicine fellow and Chief Fellow in NYC. Founder of SunriseMD healthcare consulting.",
+          "Tahir Hafeez Malik, MD — pulmonary, critical care, and sleep medicine physician at Mount Sinai. Founder of SunriseMD healthcare consulting.",
       },
     ],
   }),
   component: AboutPage,
 });
 
-const experiences = [
+const sections = [
   {
-    title: "Biomedical Engineering",
-    subtitle: "Designing for clinical need, cost, durability, and implementation",
-    body: "At Rice, I trained as a biomedical engineer and worked on technologies designed for low-resource settings. My senior design project, PneumaShoe, was a low-cost pneumatic compression device for VTE prevention that required not only engineering design, but also an understanding of usability, supply constraints, durability, and real-world clinical deployment.",
-    skills:
-      "Needs assessment, prototyping, technical design, resource-conscious product development, early feasibility evaluation.",
+    title: "Biomedical Engineering & Device Design",
+    subtitle: "Building around clinical need, cost, and durability",
+    body: [
+      "Before becoming a physician, I trained as a biomedical engineer. That background taught me to approach healthcare problems by first understanding the user, the environment, the constraints, and the failure points.",
+      "At Rice, I helped develop PneumaShoe, a low-cost, durable intermittent pneumatic compression device designed to prevent venous thromboembolism in low-resource settings. The project required more than technical design. It required understanding clinical workflows, cost constraints, durability requirements, and the realities of deployment in settings where conventional medical devices may be too expensive or difficult to maintain.",
+      "The project received multiple recognitions, including the Rice Department of Bioengineering Outstanding Senior Design Project Award, the 2017 Willy Revolution Award for Engineering Innovation, selection for the Design of Medical Devices Conference Student Design Showcase, selection for the Rice 360° Global Health Design Competition, and 3rd place at the National Biomedical Engineering Society Undergraduate Design Competition.",
+      "That experience shaped how I think about innovation: a device, tool, or intervention is only as valuable as its ability to solve a real problem in the environment where it will actually be used.",
+    ],
   },
   {
     title: "Global Health & Implementation Science",
-    subtitle: "Building tools that work across settings",
-    body: "In medical school, I worked on global health projects involving clinical workflow evaluation, needs assessments, and implementation planning in resource-limited environments. These experiences taught me that successful healthcare innovation depends on local context, stakeholder alignment, and the ability to design around real-world constraints.",
-    skills:
-      "Implementation planning, stakeholder management, cross-cultural collaboration, workflow evaluation, systems thinking.",
+    subtitle: "Designing interventions around real-world constraints",
+    body: [
+      "My global health work has focused on a central implementation question: how do we design healthcare interventions that are not only evidence-based, but feasible in the environments where they need to work?",
+      "During residency at NYU, I worked with Dr. Rajesh Vedanthan's global health lab studying whether air purifiers could affect the progression of heart failure in India. As part of the Exposures Committee, I helped design study protocols with long-term human-resource and financial constraints in mind. Through the Capacity Building Committee, I contributed to coursework and SMART goals intended to strengthen local research infrastructure in India. This work was supported by a $20,000 Institutes of Health Collaboration grant and deepened my interest in implementation science, capacity building, and pragmatic evaluation in low- and middle-income settings.",
+      "Earlier in my training, I worked on global health projects in Malawi and The Gambia that taught me how to approach clinical problems through the lens of local context. In Malawi, I investigated failure modes in oxygen concentrators and helped design durable, locally sourced engineering solutions for low-resource settings. In The Gambia, I helped develop needs assessments and surveys to evaluate maternal and newborn safety workflows across rural and urban clinical sites.",
+      "Together, these experiences shaped how I evaluate healthcare innovation today. A promising idea is only meaningful if it can survive contact with real-world constraints: staffing, cost, culture, infrastructure, incentives, and the daily workflow of the people expected to use it.",
+    ],
   },
   {
-    title: "Outcomes Research & Due Diligence",
-    subtitle: "Evaluating whether high-stakes clinical decisions are evidence-based",
-    body: "My transplant outcomes research focused on organ discard and allocation decisions—areas where imperfect data, clinical uncertainty, and operational pressures intersect. By developing organ discard risk indices and studying donor utilization, I gained experience evaluating whether decisions are clinically justified, statistically defensible, and aligned with patient outcomes.",
-    skills:
-      "Clinical due diligence, risk modeling, outcomes research, data interpretation, evidence-based decision support.",
+    title: "Outcomes Research & Clinical Due Diligence",
+    subtitle: "Evaluating high-stakes decisions with evidence",
+    body: [
+      "My research has also focused on high-stakes clinical decisions where data, uncertainty, and resource constraints intersect.",
+      "In transplantation, I helped develop organ discard risk indices designed to better understand why donor organs are accepted or discarded. This work included research on pediatric liver allograft discard, heart transplantation discard risk, and machine-learning approaches to donor lung discard.",
+      "This research strengthened the way I approach due diligence in healthcare. When evaluating a clinical product, intervention, or system-level strategy, the key questions are rarely just, \u201CDoes this work?\u201D The better questions are:",
+      "For whom does it work? Under what conditions? Compared to what? At what cost? And what would it take to implement it safely and sustainably?",
+      "Those are the questions that connect outcomes research to real-world decision-making.",
+    ],
+  },
+  {
+    title: "Management & Cross-Functional Leadership",
+    subtitle: "Turning ideas into coordinated action",
+    body: [
+      "Healthcare implementation depends on more than evidence. It requires coordination across people, institutions, incentives, and timelines.",
+      "Throughout my training, I have worked across multidisciplinary teams that required both operational planning and stakeholder management. During the COVID-19 pandemic, I founded and coordinated city-wide blood drives in Houston, facilitating collaboration between trauma surgery leadership, the Gulf Coast Regional Blood Center, Rice EMS, and medical student volunteers. The effort collected more than 300 bags of blood across five drives during a period of national shortage.",
+      "I have also led student, research, and clinical teams, including serving as Chief Fellow at Mount Sinai. These experiences have helped me understand that implementation is not simply about having the right idea. It is about building the structure, relationships, and execution plan needed to make that idea work.",
+    ],
   },
 ];
 
@@ -50,92 +68,79 @@ function AboutPage() {
   return (
     <PageShell>
       <section className="mt-10">
-
-        <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">Hi, I'm Tahir</h2>
+        <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">About Me</h2>
         <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
-          Physician · Biomedical Engineer · Healthcare Implementation &amp; Strategy
+          Physician · Biomedical Engineer · Implementation-Minded Strategist
         </p>
         <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/80 sm:text-lg">
           <p>
-            I'm a pulmonary, critical care, and sleep medicine physician building{" "}
-            {siteConfig.company} to help translate clinical evidence, technology, and
-            operational insight into better healthcare delivery.
+            I'm Tahir Hafeez Malik, MD, a pulmonary, critical care, and sleep medicine
+            physician at Mount Sinai with a background in biomedical engineering, global
+            health, outcomes research, and health system implementation. My work has
+            consistently focused on one question:
+          </p>
+          <p className="border-l-2 border-foreground/30 pl-4 italic">
+            How do we take promising healthcare ideas and determine whether they are
+            clinically meaningful, operationally feasible, and ready for real-world
+            implementation?
+          </p>
+          <p>That question is the foundation of SunriseMD.</p>
+          <p>
+            My path into medicine started through engineering. At Rice University, I
+            studied bioengineering with a focus in global health technologies. At Baylor
+            College of Medicine, I continued that work through health policy, global
+            health, quality improvement, and clinical research. I later trained in
+            internal medicine at NYU and am now completing fellowship in pulmonary,
+            critical care, and sleep medicine at Mount Sinai, where I also serve as
+            Chief Fellow.
           </p>
           <p>
-            My work sits at the intersection of medicine, implementation science, and due
-            diligence: understanding whether a clinical idea is meaningful, whether it can
-            work in the real world, and what it would take to bring it safely and sustainably
-            to patients.
+            Across those experiences, I have built a practical framework for evaluating
+            healthcare innovation: understand the clinical problem, assess the evidence,
+            pressure-test feasibility, and design for implementation.
           </p>
         </div>
       </section>
 
-      <h2 className="mt-16 font-serif text-3xl tracking-tight sm:text-4xl">Background</h2>
+      {sections.map((section) => (
+        <section key={section.title} className="mt-16">
+          <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
+            {section.title}
+          </h2>
+          <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+            {section.subtitle}
+          </p>
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/80 sm:text-lg">
+            {section.body.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+      ))}
 
-      <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
-        <p>
-          Tahir Hafeez Malik, MD is a pulmonary, critical care, and sleep medicine fellow and
-          Chief Fellow in New York City, with a background in bioengineering, global health,
-          outcomes research, and health system implementation. He trained in bioengineering at
-          Rice University, where he focused on global health technologies, and earned his MD
-          from Baylor College of Medicine with distinctions in medical education, service,
-          quality improvement, health policy, and global health.
-        </p>
-        <p>
-          Before becoming a physician, Tahir worked as a biomedical engineer designing practical
-          technologies for resource-limited settings. His senior design team developed
-          PneumaShoe, a low-cost, durable intermittent pneumatic compression device for venous
-          thromboembolism prevention in low-resource environments. The device was recognized
-          with multiple national and institutional awards, including the Rice Department of
-          Bioengineering Outstanding Senior Design Project Award, the 2017 Willy Revolution
-          Award for Engineering Innovation, and 3rd place at the National Biomedical
-          Engineering Society Undergraduate Design Competition.
-        </p>
-        <p>
-          During medical school, Tahir continued to focus on the question that still drives his
-          work: how do we know whether an intervention will actually work for the people and
-          systems it is meant to serve? Through global health projects in Malawi and The Gambia,
-          he developed needs assessments, worked across international teams, and designed
-          culturally tailored tools for evaluating clinical workflows in low-resource settings.
-        </p>
-        <p>
-          His research later expanded into transplant outcomes and organ utilization, where he
-          helped develop discard risk indices for pediatric liver, heart, and lung allografts.
-          This work strengthened his ability to evaluate complex clinical datasets, identify the
-          drivers of high-stakes decisions, and build risk models that inform whether scarce
-          medical resources are being used appropriately.
-        </p>
-        <p>
-          Across these experiences, Tahir developed a practical lens for healthcare innovation:
-          good ideas are not enough. They need clinical relevance, operational feasibility,
-          thoughtful implementation, and rigorous evaluation. {siteConfig.company} is built
-          around that lens.
-        </p>
-      </div>
-
-      <div className="mt-16 border-t border-border pt-10">
-        <h2 className="font-serif text-3xl tracking-tight">Experience</h2>
-        <div className="mt-8 space-y-6">
-          {experiences.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-border bg-card p-6 sm:p-7"
-            >
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                {item.title}
-              </p>
-              <h3 className="mt-2 font-serif text-xl sm:text-2xl">{item.subtitle}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/80 sm:text-base">
-                {item.body}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-foreground/70">
-                <span className="font-medium text-foreground/90">Skills built:</span>{" "}
-                {item.skills}
-              </p>
-            </article>
-          ))}
+      <section className="mt-16">
+        <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">Why SunriseMD</h2>
+        <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/80 sm:text-lg">
+          <p>
+            SunriseMD is built around the perspective I have developed across
+            engineering, medicine, global health, implementation science, and outcomes
+            research.
+          </p>
+          <p>
+            I believe healthcare innovation needs disciplined evaluation. New
+            technologies, clinical programs, and AI-enabled tools should not be judged
+            by novelty alone. They should be evaluated by whether they address a
+            meaningful clinical problem, whether the evidence is strong, whether the
+            implementation pathway is realistic, and whether they can improve care
+            without adding unnecessary complexity.
+          </p>
+          <p>
+            My goal with SunriseMD is to help bridge that gap: translating evidence into
+            strategy, strategy into implementation, and implementation into measurable
+            clinical value.
+          </p>
         </div>
-      </div>
+      </section>
     </PageShell>
   );
 }
