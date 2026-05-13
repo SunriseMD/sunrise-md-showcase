@@ -36,6 +36,12 @@ const sections = [
   {
     title: "Global Health & Implementation Science",
     subtitle: "Designing interventions around real-world constraints",
+    image: {
+      src: malawiOxygenImg,
+      alt: "Rows of oxygen concentrators stored in a workshop in Malawi, awaiting repair and assessment.",
+      caption: "Oxygen concentrators we worked on repairing in Malawi.",
+      attachToParagraph: 2,
+    },
     body: [
       "My global health work has focused on a central implementation question: how do we design healthcare interventions that are not only evidence-based, but feasible in the environments where they need to work?",
       "During residency at NYU, I worked with Dr. Rajesh Vedanthan's global health lab studying whether air purifiers could affect the progression of heart failure in India. As part of the Exposures Committee, I helped design study protocols with long-term human-resource and financial constraints in mind. Through the Capacity Building Committee, I contributed to coursework and SMART goals intended to strengthen local research infrastructure in India. This work was supported by a $20,000 Institutes of Health Collaboration grant and deepened my interest in implementation science, capacity building, and pragmatic evaluation in low- and middle-income settings.",
