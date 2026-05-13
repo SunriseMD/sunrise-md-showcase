@@ -34,18 +34,20 @@ function AboutSunriseMDPage() {
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
         <p>
-          {siteConfig.company} is an independent consulting practice supporting healthcare and
-          health technology companies at pivotal moments — launching a product, entering a new
-          market, raising a round, or rebuilding a clinical workflow that isn't working.
+          SunriseMD is an independent consulting practice supporting healthcare and health
+          technology companies at pivotal moments: launching a product, entering a new
+          market, preparing for fundraising, or redesigning a clinical workflow that is
+          not performing the way it should.
         </p>
         <p>
-          The work is hands-on. Engagements are typically small in scope and high in ownership:
-          founder strategy sessions, commercial and provider partnership planning, product
-          positioning, fundraising diligence support, and clinical workflow design.
+          The work is hands-on and highly practical. Engagements are intentionally
+          focused, with close collaboration on strategy, product positioning, clinical
+          validation, provider partnerships, diligence preparation, and workflow design.
         </p>
         <p>
-          Every engagement is grounded in the same belief: great healthcare companies are built
-          when business strategy and clinical reality move in the same direction.
+          Every engagement is grounded in a simple belief: healthcare strategy works best
+          when business goals, clinical reality, and implementation are aligned from the
+          start.
         </p>
       </div>
 
