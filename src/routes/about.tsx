@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
-import malawiOxygenImg from "@/assets/malawi-oxygen-concentrators.jpg";
+import malawiOxygenImg from "@/assets/malawi-oxygen-repair.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -39,8 +39,8 @@ const sections = [
     subtitle: "Designing interventions around real-world constraints",
     image: {
       src: malawiOxygenImg,
-      alt: "Rows of oxygen concentrators stored in a workshop in Malawi, awaiting repair and assessment.",
-      caption: "Oxygen concentrators we worked on repairing in Malawi.",
+      alt: "Repairing an oxygen concentrator alongside a local technician at Kamuzu Central Hospital in Lilongwe, Malawi.",
+      caption: "Repairing an oxygen concentrator at Kamuzu Central Hospital in Lilongwe, Malawi.",
       attachToParagraph: 2,
     },
     body: [
