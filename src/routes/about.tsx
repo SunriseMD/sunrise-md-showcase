@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
+import malawiOxygenImg from "@/assets/malawi-oxygen-concentrators.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
