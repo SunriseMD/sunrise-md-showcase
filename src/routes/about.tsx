@@ -41,11 +41,13 @@ const sections = [
       src: malawiOxygenImg,
       alt: "Repairing an oxygen concentrator alongside a local technician at Kamuzu Central Hospital in Lilongwe, Malawi.",
       caption: "Repairing an oxygen concentrator at Kamuzu Central Hospital in Lilongwe, Malawi.",
-      attachToParagraph: 2,
+      attachToParagraph: 4,
     },
     body: [
       "My global health work has focused on a central implementation question: how do we design healthcare interventions that are not only evidence-based, but feasible in the environments where they need to work?",
+      { heading: "NYU — Implementation Research in India" },
       "During residency at NYU, I worked with Dr. Rajesh Vedanthan's global health lab studying whether air purifiers could affect the progression of heart failure in India. As part of the Exposures Committee, I helped design study protocols with long-term human-resource and financial constraints in mind. Through the Capacity Building Committee, I contributed to coursework and SMART goals intended to strengthen local research infrastructure in India. This work was supported by a $20,000 Institutes of Health Collaboration grant and deepened my interest in implementation science, capacity building, and pragmatic evaluation in low- and middle-income settings.",
+      { heading: "Malawi & The Gambia — Field Work in Low-Resource Settings" },
       "Earlier in my training, I worked on global health projects in Malawi and The Gambia that taught me how to approach clinical problems through the lens of local context. In Malawi, I investigated failure modes in oxygen concentrators and helped design durable, locally sourced engineering solutions for low-resource settings. In The Gambia, I helped develop needs assessments and surveys to evaluate maternal and newborn safety workflows across rural and urban clinical sites.",
       "Together, these experiences shaped how I evaluate healthcare innovation today. A promising idea is only meaningful if it can survive contact with real-world constraints: staffing, cost, culture, infrastructure, incentives, and the daily workflow of the people expected to use it.",
     ],
@@ -119,7 +121,7 @@ function AboutPage() {
             {section.subtitle}
           </p>
           <div className="mt-6 text-base leading-relaxed text-foreground/80 sm:text-lg [&>p+p]:mt-5">
-            {section.body.map((paragraph, idx) => (
+            {section.body.map((item, idx) => (
               <Fragment key={idx}>
                 {section.image && section.image.attachToParagraph === idx && (
                   <figure className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]">
@@ -134,7 +136,13 @@ function AboutPage() {
                     </figcaption>
                   </figure>
                 )}
-                <p>{paragraph}</p>
+                {typeof item === "string" ? (
+                  <p>{item}</p>
+                ) : (
+                  <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
+                    {item.heading}
+                  </h3>
+                )}
               </Fragment>
             ))}
             <div className="clear-both" />
