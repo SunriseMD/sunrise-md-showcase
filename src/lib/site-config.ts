@@ -1,14 +1,18 @@
 // Edit this file to update your site content.
 
+import portraitUrl from "@/assets/tahir-portrait.jpg";
+
 export const siteConfig = {
   company: "SunriseMD",
-  name: "Your Name",
+  name: "Tahir",
   tagline: "Founder, SunriseMD — Healthcare Consulting",
+  subTagline:
+    "Chief Fellow — Pulmonary, Critical Care, and Sleep Medicine Fellowship — NYC",
   bio: "I'm a healthcare consultant helping early- and growth-stage health technology companies sharpen strategy, accelerate go-to-market, and navigate the complexities of modern healthcare. Through SunriseMD, I partner with founders and operators to translate clinical insight into scalable products.",
   email: "hello@sunrisemd.com",
   linkedin: "https://www.linkedin.com/in/your-handle",
   cvUrl: "/cv.pdf", // Drop your CV at public/cv.pdf
-  portraitUrl: "/portrait.jpg", // Optional: drop a photo at public/portrait.jpg
+  portraitUrl,
 };
 
 export type PortfolioCompany = {
