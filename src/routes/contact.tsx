@@ -6,12 +6,12 @@ import { siteConfig } from "@/lib/site-config";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — SunriseMD" },
+      { title: "Contact Us — SunriseMD" },
       {
         name: "description",
         content: `Get in touch with ${siteConfig.company} about healthcare consulting engagements.`,
       },
-      { property: "og:title", content: "Contact — SunriseMD" },
+      { property: "og:title", content: "Contact Us — SunriseMD" },
       {
         property: "og:description",
         content: `Get in touch with ${siteConfig.company} about healthcare consulting engagements.`,
