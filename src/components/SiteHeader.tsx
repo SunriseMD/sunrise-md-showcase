@@ -4,7 +4,7 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Tahir" },
   { to: "/about-sunrisemd", label: "Our Approach" },
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/portfolio", label: "Advising Portfolio" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
