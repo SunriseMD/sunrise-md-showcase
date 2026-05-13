@@ -121,7 +121,7 @@ function AboutPage() {
             {section.subtitle}
           </p>
           <div className="mt-6 text-base leading-relaxed text-foreground/80 sm:text-lg [&>p+p]:mt-5">
-            {section.body.map((paragraph, idx) => (
+            {section.body.map((item, idx) => (
               <Fragment key={idx}>
                 {section.image && section.image.attachToParagraph === idx && (
                   <figure className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]">
@@ -136,7 +136,13 @@ function AboutPage() {
                     </figcaption>
                   </figure>
                 )}
-                <p>{paragraph}</p>
+                {typeof item === "string" ? (
+                  <p>{item}</p>
+                ) : (
+                  <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
+                    {item.heading}
+                  </h3>
+                )}
               </Fragment>
             ))}
             <div className="clear-both" />
