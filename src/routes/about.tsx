@@ -36,6 +36,7 @@ const sections = [
     subtitle: "Building around clinical need, cost, and durability",
     gallery: {
       attachAfterParagraph: 2,
+      columns: 2,
       images: [
         {
           src: pneumaShoePrototypeImg,
@@ -102,6 +103,7 @@ const sections = [
     subtitle: "Evaluating high-stakes decisions with evidence",
     gallery: {
       attachAfterParagraph: 1,
+      columns: 2,
       images: [
         {
           src: atsAwardPresentationImg,
