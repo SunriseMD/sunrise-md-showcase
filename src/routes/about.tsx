@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import malawiOxygenImg from "@/assets/malawi-oxygen-repair.jpg";
+import pneumaShoePrototypeImg from "@/assets/pneumashoe-prototype.jpg";
+import pneumaShoeDisplayImg from "@/assets/pneumashoe-display.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -27,6 +29,21 @@ const sections = [
   {
     title: "Biomedical Engineering & Device Design",
     subtitle: "Building around clinical need, cost, and durability",
+    gallery: {
+      attachAfterParagraph: 2,
+      images: [
+        {
+          src: pneumaShoePrototypeImg,
+          alt: "Inside view of the medium-fidelity PneumaShoe prototype showing pumps, tubing, and circuitry.",
+          caption: "Inside of the medium-fidelity PneumaShoe prototype.",
+        },
+        {
+          src: pneumaShoeDisplayImg,
+          alt: "PneumaShoe user display with status LEDs and a pressure readout next to the inflatable cuff.",
+          caption: "PneumaShoe user display and cuff.",
+        },
+      ],
+    },
     body: [
       "Before becoming a physician, I trained as a biomedical engineer. That background taught me to approach healthcare problems by first understanding the user, the environment, the constraints, and the failure points.",
       "At Rice, I helped develop PneumaShoe, a low-cost, durable intermittent pneumatic compression device designed to prevent venous thromboembolism in low-resource settings. The project required more than technical design. It required understanding clinical workflows, cost constraints, durability requirements, and the realities of deployment in settings where conventional medical devices may be too expensive or difficult to maintain.",
@@ -142,6 +159,23 @@ function AboutPage() {
                   <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
                     {item.heading}
                   </h3>
+                )}
+                {section.gallery && section.gallery.attachAfterParagraph === idx && (
+                  <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {section.gallery.images.map((img) => (
+                      <figure key={img.src}>
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
+                          loading="lazy"
+                        />
+                        <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                          {img.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
                 )}
               </Fragment>
             ))}
