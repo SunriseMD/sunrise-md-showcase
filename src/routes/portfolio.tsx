@@ -31,36 +31,53 @@ function PortfolioPage() {
         Companies I've partnered with
       </p>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2">
+      <div className="mt-10 space-y-10">
         {portfolio.map((company) => (
-          <a
+          <article
             key={company.name}
-            href={company.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-foreground"
+            className="rounded-2xl border border-border bg-card p-6 sm:p-8"
           >
-            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-muted">
-              {company.logoUrl ? (
-                <img
-                  src={company.logoUrl}
-                  alt={`${company.name} logo`}
-                  className="h-full w-full object-contain"
-                />
-              ) : (
-                <span className="font-serif text-2xl text-muted-foreground">
-                  {company.name.charAt(0)}
-                </span>
-              )}
+            <div className="flex items-center gap-3">
+              <h2 className="font-serif text-2xl">{company.name}</h2>
+              <a
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+                aria-label={`Visit ${company.name}`}
+              >
+                <ExternalLink className="h-4 w-4" />
+              </a>
             </div>
-            <div className="mt-5 flex items-center gap-2">
-              <h2 className="font-serif text-xl">{company.name}</h2>
-              <ExternalLink className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-foreground" />
+
+            {company.tags.length > 0 && (
+              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                {company.tags.join(" · ")}
+              </p>
+            )}
+
+            <div className="mt-5 space-y-4 text-sm leading-relaxed text-foreground/80">
+              {company.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-              {company.description}
-            </p>
-          </a>
+
+            {company.focusAreas.length > 0 && (
+              <div className="mt-6">
+                <h3 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  Advisory focus areas
+                </h3>
+                <ul className="mt-3 space-y-1.5 text-sm text-foreground/80">
+                  {company.focusAreas.map((area) => (
+                    <li key={area} className="flex gap-2">
+                      <span className="text-muted-foreground">—</span>
+                      <span>{area}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </article>
         ))}
       </div>
     </PageShell>
