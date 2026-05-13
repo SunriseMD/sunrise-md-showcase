@@ -42,4 +42,19 @@ export const portfolio: PortfolioCompany[] = [
     ],
     url: "https://withregard.com",
   },
+  {
+    name: "Impiricus",
+    tags: ["Physician Engagement", "Life Sciences", "Clinical Communication"],
+    paragraphs: [
+      "Impiricus is a healthcare technology company focused on improving how physicians access relevant pharmaceutical and clinical resources through ethical, technology-enabled engagement.",
+      "As an advisor, I help bring a physician's perspective to questions of clinical relevance, communication design, and real-world adoption. My work centers on how busy clinicians receive, filter, and act on information — and how digital tools can make those interactions more useful, respectful, and aligned with patient care.",
+    ],
+    focusAreas: [
+      "Physician engagement and communication strategy",
+      "Clinical relevance of educational and pharmaceutical resources",
+      "Specialist physician workflow and information needs",
+      "Ethical, useful, and non-disruptive HCP engagement",
+    ],
+    url: "https://impiricus.com",
+  },
 ];
