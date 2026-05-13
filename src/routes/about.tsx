@@ -49,9 +49,9 @@ const experiences = [
 function AboutPage() {
   return (
     <PageShell>
-      <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">About</h1>
+      <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">About Tahir</h1>
       <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-        {siteConfig.company} — Healthcare consulting, built around clinical reality
+        Founder of {siteConfig.company} — Pulmonary, Critical Care & Sleep Medicine
       </p>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
