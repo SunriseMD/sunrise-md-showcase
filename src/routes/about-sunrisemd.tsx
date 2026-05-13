@@ -61,10 +61,10 @@ function AboutSunriseMDPage() {
         <h2 className="font-serif text-2xl">How I help</h2>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {[
-            { title: "Strategy", body: "Market entry, positioning, and growth planning." },
-            { title: "Commercial", body: "Provider partnerships, payer strategy, and GTM." },
-            { title: "Product", body: "Clinical workflow design and product validation." },
-            { title: "Fundraising", body: "Diligence prep, narrative, and investor materials." },
+            { title: "Strategy", body: "Focused support on market positioning, clinical use cases, and founder-level strategic decisions." },
+            { title: "Commercial", body: "Provider-facing perspective on adoption barriers, stakeholder needs, clinical value propositions, and partnership strategy." },
+            { title: "Product", body: "Clinical workflow review, product feedback, implementation considerations, and real-world usability insight." },
+            { title: "Fundraising", body: "Support with diligence preparation, clinical narrative, evidence framing, and investor-facing materials." },
           ].map((item) => (
             <li
               key={item.title}
