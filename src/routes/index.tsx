@@ -43,6 +43,9 @@ function HomePage() {
         <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
           {siteConfig.tagline}
         </p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          {siteConfig.subTagline}
+        </p>
 
         <div className="mt-10 w-full border-t border-border" />
 
