@@ -119,12 +119,9 @@ function AboutPage() {
           </p>
           <div className="mt-6 text-base leading-relaxed text-foreground/80 sm:text-lg [&>p+p]:mt-5">
             {section.body.map((paragraph, idx) => (
-              <>
+              <Fragment key={idx}>
                 {section.image && section.image.attachToParagraph === idx && (
-                  <figure
-                    key={`fig-${idx}`}
-                    className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]"
-                  >
+                  <figure className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]">
                     <img
                       src={section.image.src}
                       alt={section.image.alt}
@@ -136,8 +133,8 @@ function AboutPage() {
                     </figcaption>
                   </figure>
                 )}
-                <p key={idx}>{paragraph}</p>
-              </>
+                <p>{paragraph}</p>
+              </Fragment>
             ))}
             <div className="clear-both" />
           </div>
