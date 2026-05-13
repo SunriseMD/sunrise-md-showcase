@@ -117,10 +117,29 @@ function AboutPage() {
           <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
             {section.subtitle}
           </p>
-          <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/80 sm:text-lg">
+          <div className="mt-6 text-base leading-relaxed text-foreground/80 sm:text-lg [&>p+p]:mt-5">
             {section.body.map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
+              <>
+                {section.image && section.image.attachToParagraph === idx && (
+                  <figure
+                    key={`fig-${idx}`}
+                    className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]"
+                  >
+                    <img
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
+                      loading="lazy"
+                    />
+                    <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                      {section.image.caption}
+                    </figcaption>
+                  </figure>
+                )}
+                <p key={idx}>{paragraph}</p>
+              </>
             ))}
+            <div className="clear-both" />
           </div>
         </section>
       ))}
