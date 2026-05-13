@@ -9,7 +9,7 @@ export const siteConfig = {
   subTagline:
     "Chief Fellow — Pulmonary, Critical Care, and Sleep Medicine Fellowship — NYC",
   bio: "I'm a healthcare consultant helping early- and growth-stage health technology companies sharpen strategy, accelerate go-to-market, and navigate the complexities of modern healthcare. Through SunriseMD, I partner with founders and operators to translate clinical insight into scalable products.",
-  email: "tahir@sunriseMD.com",
+  email: "tahir@sunrisemd.com",
   linkedin: "https://www.linkedin.com/in/tahir-malik-6770901b1/",
   cvUrl: "https://drive.google.com/file/d/1J10O7tHVcm5q0n_dxQW-3hM6kivWhTf9/view?usp=sharing",
   portraitUrl,
