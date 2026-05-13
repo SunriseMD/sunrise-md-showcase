@@ -50,8 +50,29 @@ function AboutPage() {
   return (
     <PageShell>
       <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">About Tahir</h1>
-      <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-        Founder of {siteConfig.company} — Pulmonary, Critical Care & Sleep Medicine
+
+      <section className="mt-10">
+        <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">Hi, I'm Tahir</h2>
+        <p className="mt-3 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+          Physician · Biomedical Engineer · Healthcare Implementation &amp; Strategy
+        </p>
+        <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/80 sm:text-lg">
+          <p>
+            I'm a pulmonary, critical care, and sleep medicine physician building{" "}
+            {siteConfig.company} to help translate clinical evidence, technology, and
+            operational insight into better healthcare delivery.
+          </p>
+          <p>
+            My work sits at the intersection of medicine, implementation science, and due
+            diligence: understanding whether a clinical idea is meaningful, whether it can
+            work in the real world, and what it would take to bring it safely and sustainably
+            to patients.
+          </p>
+        </div>
+      </section>
+
+      <p className="mt-12 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+        Founder of {siteConfig.company} — Pulmonary, Critical Care &amp; Sleep Medicine
       </p>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
