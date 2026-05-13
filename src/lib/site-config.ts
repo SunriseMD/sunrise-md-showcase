@@ -17,28 +17,29 @@ export const siteConfig = {
 
 export type PortfolioCompany = {
   name: string;
-  description: string;
+  tags: string[];
+  paragraphs: string[];
+  focusAreas: string[];
   url: string;
-  logoUrl?: string; // Optional logo image
+  logoUrl?: string;
 };
 
 export const portfolio: PortfolioCompany[] = [
   {
-    name: "Company One",
-    description:
-      "Advised on commercial strategy and provider partnerships during the company's expansion across the U.S.",
-    url: "https://example.com",
-  },
-  {
-    name: "Company Two",
-    description:
-      "Led go-to-market planning and clinical workflow design for a digital therapeutics platform.",
-    url: "https://example.com",
-  },
-  {
-    name: "Company Three",
-    description:
-      "Supported fundraising diligence and product positioning ahead of a successful acquisition.",
-    url: "https://example.com",
+    name: "Regard",
+    tags: ["Clinical AI", "Documentation", "Diagnosis Capture", "EHR Workflow"],
+    paragraphs: [
+      "At Regard, I advise on the development of clinically accurate diagnosis logic designed to support hospital billing workflows and help physicians create more complete, efficient clinical notes.",
+      "My work includes building diagnoses for the product, reviewing diagnoses created by other physician consultants, and ensuring that clinical content is accurate, streamlined, and practical for real-world use. I also collaborate with the engineering team to suggest product improvements, refine the diagnosis-builder workflow, and identify features that would make the platform more intuitive for clinicians.",
+      "Beyond product and content development, I have helped Regard identify additional physician builders, supporting the expansion of a clinically grounded content development team.",
+    ],
+    focusAreas: [
+      "Clinical diagnosis logic and content development",
+      "Documentation and billing workflow support",
+      "Review and quality assurance of physician-built diagnoses",
+      "Product feedback and diagnosis-builder refinement",
+      "Physician builder recruitment",
+    ],
+    url: "https://withregard.com",
   },
 ];
