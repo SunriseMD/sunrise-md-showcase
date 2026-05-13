@@ -5,13 +5,13 @@ import { siteConfig } from "@/lib/site-config";
 export const Route = createFileRoute("/about-sunrisemd")({
   head: () => ({
     meta: [
-      { title: "About SunriseMD — Healthcare Consulting" },
+      { title: "Our Approach — SunriseMD" },
       {
         name: "description",
         content:
-          "About SunriseMD: an independent healthcare consulting practice partnering with founders and operators to build the next generation of health technology.",
+          "Our Approach: an independent healthcare consulting practice partnering with founders and operators to build the next generation of health technology.",
       },
-      { property: "og:title", content: "About SunriseMD — Healthcare Consulting" },
+      { property: "og:title", content: "Our Approach — SunriseMD" },
       {
         property: "og:description",
         content:
@@ -26,7 +26,7 @@ function AboutSunriseMDPage() {
   return (
     <PageShell>
       <h1 className="font-serif text-4xl tracking-tight sm:text-5xl">
-        About {siteConfig.company}
+        Our Approach
       </h1>
       <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
         Healthcare consulting, built around clinical reality
