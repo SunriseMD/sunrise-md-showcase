@@ -20,7 +20,7 @@ export function SiteHeader() {
             className="rounded-full border border-border bg-background px-5 py-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
             activeProps={{
               className:
-                "rounded-full border border-foreground bg-foreground px-5 py-2 text-xs font-medium uppercase tracking-[0.18em] text-background",
+                "rounded-full border border-foreground/40 bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground",
             }}
           >
             {item.label}
