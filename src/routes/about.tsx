@@ -6,6 +6,9 @@ import pneumaShoePrototypeImg from "@/assets/pneumashoe-prototype.jpg";
 import pneumaShoeDisplayImg from "@/assets/pneumashoe-display.jpg";
 import atsAwardPresentationImg from "@/assets/ats-award-presentation.jpg";
 import atsAwardCheckImg from "@/assets/ats-award-check.jpg";
+import indiaHomeAssessmentImg from "@/assets/india-home-assessment.jpg";
+import indiaAirPurifierPartsImg from "@/assets/india-air-purifier-parts.jpg";
+import indiaPatientInterviewImg from "@/assets/india-patient-interview.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -33,6 +36,7 @@ const sections = [
     subtitle: "Building around clinical need, cost, and durability",
     gallery: {
       attachAfterParagraph: 2,
+      columns: 2,
       images: [
         {
           src: pneumaShoePrototypeImg,
@@ -70,12 +74,36 @@ const sections = [
       "During residency at NYU, I worked with Dr. Rajesh Vedanthan's global health lab studying whether air purifiers could affect the progression of heart failure in India. As part of the Exposures Committee, I helped design study protocols with long-term human-resource and financial constraints in mind. Through the Capacity Building Committee, I contributed to coursework and SMART goals intended to strengthen local research infrastructure in India. This work was supported by a $20,000 Institutes of Health Collaboration grant and deepened my interest in implementation science, capacity building, and pragmatic evaluation in low- and middle-income settings.",
       "Together, these experiences shaped how I evaluate healthcare innovation today. A promising idea is only meaningful if it can survive contact with real-world constraints: staffing, cost, culture, infrastructure, incentives, and the daily workflow of the people expected to use it.",
     ],
+    galleries: [
+      {
+        attachAfterParagraph: 4,
+        columns: 3,
+        images: [
+          {
+            src: indiaHomeAssessmentImg,
+            alt: "Assessing a patient's home in India to determine suitability for a study air purifier.",
+            caption: "Assessing a patient's home in India for air purifier placement.",
+          },
+          {
+            src: indiaAirPurifierPartsImg,
+            alt: "Components of a novel low-cost air purifier used in the India heart failure study.",
+            caption: "Parts for a novel low-cost air purifier used in the study.",
+          },
+          {
+            src: indiaPatientInterviewImg,
+            alt: "Conducting a baseline patient interview with a study participant in Delhi.",
+            caption: "Baseline patient interview with a participant in Delhi.",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Outcomes Research & Clinical Due Diligence",
     subtitle: "Evaluating high-stakes decisions with evidence",
     gallery: {
       attachAfterParagraph: 1,
+      columns: 2,
       images: [
         {
           src: atsAwardPresentationImg,
@@ -177,9 +205,21 @@ function AboutPage() {
                     {item.heading}
                   </h3>
                 )}
-                {section.gallery && section.gallery.attachAfterParagraph === idx && (
-                  <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {section.gallery.images.map((img) => (
+                {[
+                  ...(section.gallery && section.gallery.attachAfterParagraph === idx
+                    ? [section.gallery]
+                    : []),
+                  ...(section.galleries
+                    ? section.galleries.filter((g) => g.attachAfterParagraph === idx)
+                    : []),
+                ].map((g, gIdx) => (
+                  <div
+                    key={gIdx}
+                    className={`my-6 grid grid-cols-1 gap-4 ${
+                      g.columns === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
+                    }`}
+                  >
+                    {g.images.map((img) => (
                       <figure key={img.src}>
                         <img
                           src={img.src}
@@ -193,7 +233,7 @@ function AboutPage() {
                       </figure>
                     ))}
                   </div>
-                )}
+                ))}
               </Fragment>
             ))}
             <div className="clear-both" />
