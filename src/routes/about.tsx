@@ -70,9 +70,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <p className="mt-12 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-        Founder of {siteConfig.company} — Pulmonary, Critical Care &amp; Sleep Medicine
-      </p>
+      <h2 className="mt-16 font-serif text-3xl tracking-tight sm:text-4xl">Background</h2>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/80 sm:text-lg">
         <p>
