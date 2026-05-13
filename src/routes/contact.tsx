@@ -53,11 +53,17 @@ function ContactPage() {
         Let's talk about your work
       </p>
 
-      <p className="mt-8 text-base leading-relaxed text-foreground/80 sm:text-lg">
-        Whether you're a founder exploring a new market, an operator rethinking a
-        clinical workflow, or an investor looking for diligence support — I'd love to hear from
-        you.
-      </p>
+      <div className="mt-8 space-y-4 text-base leading-relaxed text-foreground/80 sm:text-lg">
+        <p>
+          Whether you're building a healthcare product, redesigning a clinical workflow, or
+          evaluating a company at the intersection of medicine and technology, I'd be glad to
+          connect.
+        </p>
+        <p>
+          I work with founders, operators, and investors who are looking for practical clinical
+          insight from a physician currently working within the healthcare system.
+        </p>
+      </div>
 
       <ul className="mt-10 divide-y divide-border border-y border-border">
         {links.map(({ Icon, label, value, href, external }) => (
