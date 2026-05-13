@@ -40,9 +40,15 @@ function AboutSunriseMDPage() {
           not performing the way it should.
         </p>
         <p>
-          The work is hands-on and highly practical. Engagements are intentionally
-          focused, with close collaboration on strategy, product positioning, clinical
-          validation, provider partnerships, diligence preparation, and workflow design.
+          The work is grounded in a physician&rsquo;s on-the-ground perspective. I help
+          teams understand the clinical need of the hour, pressure-test assumptions, and
+          evaluate whether a strategy, product, or workflow is likely to make sense for
+          the clinicians and health systems expected to use it.
+        </p>
+        <p>
+          Engagements are intentionally focused and hands-on, with support across product
+          positioning, clinical workflow review, provider-facing strategy, diligence
+          preparation, and investor-facing materials.
         </p>
         <p>
           Every engagement is grounded in a simple belief: healthcare strategy works best
