@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — SunriseMD" },
+      { title: "About Tahir — SunriseMD" },
       {
         name: "description",
         content:
