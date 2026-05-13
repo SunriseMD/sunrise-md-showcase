@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 import malawiOxygenImg from "@/assets/malawi-oxygen-repair.jpg";
+import pneumaShoePrototypeImg from "@/assets/pneumashoe-prototype.jpg";
+import pneumaShoeDisplayImg from "@/assets/pneumashoe-display.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
