@@ -47,7 +47,7 @@ const sections = [
         alt: "PneumaShoe user display with status LEDs and a pressure readout next to the inflatable cuff.",
         caption: "PneumaShoe user display and cuff.",
         side: "left",
-        attachToParagraph: 3,
+        attachToParagraph: 2,
       },
     ],
     body: [
