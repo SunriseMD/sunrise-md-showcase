@@ -112,17 +112,12 @@ const sections = [
     subtitle: "Evaluating high-stakes decisions with evidence",
     gallery: {
       attachAfterParagraph: 1,
-      columns: 2,
+      columns: 1,
       images: [
         {
           src: atsAwardPresentationImg,
           alt: "Presenting machine-learning research on donor lung discard at the American Thoracic Society conference.",
           caption: "Presenting the Machine Learning Lung Allograft Discard Risk Index at ATS.",
-        },
-        {
-          src: atsAwardCheckImg,
-          alt: "Receiving the ATS Public Advisory Roundtable Scholarship award.",
-          caption: "Receiving the ATS Public Advisory Roundtable Scholarship for the Lung Allograft Discard Risk Index.",
         },
       ],
     },
