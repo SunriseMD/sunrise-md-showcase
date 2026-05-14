@@ -23,35 +23,42 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <PageShell>
-      <div className="flex flex-col items-center text-center">
-        <div className="h-40 w-40 overflow-hidden rounded-full bg-muted ring-1 ring-border">
-          {/* Replace /portrait.jpg in /public to show your photo */}
-          <img
-            src={siteConfig.portraitUrl}
-            alt={`Portrait of ${siteConfig.name}`}
-            className="h-full w-full object-cover"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = "none";
-            }}
-          />
+      <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:gap-16">
+        <div className="flex-shrink-0">
+          <div className="h-64 w-64 rounded-sm border border-border bg-background p-1.5 md:h-80 md:w-80">
+            <div className="h-full w-full overflow-hidden rounded-sm bg-muted">
+              <img
+                src={siteConfig.portraitUrl}
+                alt={`Portrait of ${siteConfig.name}`}
+                className="h-full w-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                }}
+              />
+            </div>
+          </div>
         </div>
 
-        <h1 className="mt-8 font-serif text-4xl tracking-tight sm:text-5xl">
-          Hi, I'm {siteConfig.name}
-        </h1>
+        <div className="flex flex-col text-left">
+          <h1 className="mb-6 font-serif text-4xl tracking-tight text-foreground sm:text-5xl">
+            Hi, I'm {siteConfig.name}
+          </h1>
 
-        <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-          {siteConfig.tagline}
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          {siteConfig.subTagline}
-        </p>
+          <div className="space-y-1.5">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
+              {siteConfig.tagline}
+            </p>
+            <p className="text-xs font-light text-muted-foreground/80 sm:text-sm">
+              {siteConfig.subTagline}
+            </p>
+          </div>
 
-        <div className="mt-10 w-full border-t border-border" />
+          <div className="my-8 h-px w-full bg-border" />
 
-        <p className="mt-10 text-base leading-relaxed text-foreground/80 sm:text-lg">
-          {siteConfig.bio}
-        </p>
+          <p className="max-w-lg text-base leading-relaxed text-foreground/80">
+            {siteConfig.bio}
+          </p>
+        </div>
       </div>
     </PageShell>
   );
