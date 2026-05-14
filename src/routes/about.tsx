@@ -110,22 +110,22 @@ const sections = [
   {
     title: "Outcomes Research & Clinical Due Diligence",
     subtitle: "Evaluating high-stakes decisions with evidence",
-    gallery: {
-      attachAfterParagraph: 1,
-      columns: 2,
-      images: [
-        {
-          src: atsAwardPresentationImg,
-          alt: "Presenting machine-learning research on donor lung discard at the American Thoracic Society conference.",
-          caption: "Presenting the Machine Learning Lung Allograft Discard Risk Index at ATS.",
-        },
-        {
-          src: atsAwardCheckImg,
-          alt: "Receiving the ATS Public Advisory Roundtable Scholarship award.",
-          caption: "Receiving the ATS Public Advisory Roundtable Scholarship for the Lung Allograft Discard Risk Index.",
-        },
-      ],
-    },
+    inlineImages: [
+      {
+        src: atsAwardPresentationImg,
+        alt: "Presenting machine-learning research on donor lung discard at the American Thoracic Society conference.",
+        caption: "Presenting the Machine Learning Lung Allograft Discard Risk Index at ATS.",
+        side: "right",
+        attachToParagraph: 1,
+      },
+      {
+        src: atsAwardCheckImg,
+        alt: "Receiving the ATS Public Advisory Roundtable Scholarship award.",
+        caption: "Receiving the ATS Public Advisory Roundtable Scholarship for the Lung Allograft Discard Risk Index.",
+        side: "left",
+        attachToParagraph: 2,
+      },
+    ],
     body: [
       "My research has also focused on high-stakes clinical decisions where data, uncertainty, and resource constraints intersect.",
       "In transplantation, I helped develop organ discard risk indices designed to better understand why donor organs are accepted or discarded. This work included research on pediatric liver allograft discard, heart transplantation discard risk, and machine-learning approaches to donor lung discard. The lung discard work was recognized with the **American Thoracic Society Public Advisory Roundtable Scholarship**.",
