@@ -53,7 +53,16 @@ const sections = [
     body: [
       "Before becoming a physician, I trained as a biomedical engineer. That background taught me to approach healthcare problems by first understanding the user, the environment, the constraints, and the failure points.",
       "At Rice, I helped develop PneumaShoe, a low-cost, durable intermittent pneumatic compression device designed to prevent venous thromboembolism in low-resource settings. The project required more than technical design. It required understanding clinical workflows, cost constraints, durability requirements, and the realities of deployment in settings where conventional medical devices may be too expensive or difficult to maintain.",
-      "The project received multiple recognitions, including the Rice Department of Bioengineering Outstanding Senior Design Project Award, the 2017 Willy Revolution Award for Engineering Innovation, selection for the Design of Medical Devices Conference Student Design Showcase, selection for the Rice 360° Global Health Design Competition, and 3rd place at the National Biomedical Engineering Society Undergraduate Design Competition.",
+      {
+        intro: "The project received multiple recognitions, including:",
+        bullets: [
+          "Rice Department of Bioengineering Outstanding Senior Design Project Award",
+          "2017 Willy Revolution Award for Engineering Innovation",
+          "Selection for the Design of Medical Devices Conference Student Design Showcase",
+          "Selection for the Rice 360° Global Health Design Competition",
+          "3rd place at the National Biomedical Engineering Society Undergraduate Design Competition",
+        ],
+      },
       "That experience shaped how I think about innovation: a device, tool, or intervention is only as valuable as its ability to solve a real problem in the environment where it will actually be used.",
     ],
   },
