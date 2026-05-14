@@ -145,6 +145,18 @@ const sections = [
   },
 ];
 
+function renderBold(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i} className="font-semibold text-foreground">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      <Fragment key={i}>{part}</Fragment>
+    ),
+  );
+}
+
 function AboutPage() {
   return (
     <PageShell>
