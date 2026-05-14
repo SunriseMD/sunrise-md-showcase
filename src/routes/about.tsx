@@ -5,7 +5,7 @@ import malawiOxygenImg from "@/assets/malawi-oxygen-repair.jpg";
 import pneumaShoePrototypeImg from "@/assets/pneumashoe-prototype.jpg";
 import pneumaShoeDisplayImg from "@/assets/pneumashoe-display.jpg";
 import atsAwardPresentationImg from "@/assets/ats-award-presentation.jpg";
-import atsAwardCheckImg from "@/assets/ats-award-check.jpg";
+
 import indiaHomeAssessmentImg from "@/assets/india-home-assessment.jpg";
 import indiaAirPurifierPartsImg from "@/assets/india-air-purifier-parts.jpg";
 import indiaPatientInterviewImg from "@/assets/india-patient-interview.jpg";
