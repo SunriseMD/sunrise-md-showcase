@@ -208,7 +208,7 @@ function AboutPage() {
                   </figure>
                 )}
                 {typeof item === "string" ? (
-                  <p>{item}</p>
+                  <p>{renderBold(item)}</p>
                 ) : "heading" in item ? (
                   <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
                     {item.heading}
