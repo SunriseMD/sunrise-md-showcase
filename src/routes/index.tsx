@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <PageShell>
-      <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:gap-16">
+      <div className="flex flex-col items-start gap-12 md:flex-row md:items-center md:gap-16">
         <div className="flex-shrink-0">
           <div className="h-64 w-64 rounded-sm border border-border bg-background p-1.5 md:h-80 md:w-80">
             <div className="h-full w-full overflow-hidden rounded-sm bg-muted">
@@ -52,14 +52,14 @@ function HomePage() {
               {siteConfig.subTagline}
             </p>
           </div>
-
-          <div className="my-8 h-px w-full bg-border" />
-
-          <p className="max-w-lg text-base leading-relaxed text-foreground/80">
-            {siteConfig.bio}
-          </p>
         </div>
       </div>
+
+      <div className="mt-12 h-px w-full bg-border" />
+
+      <p className="mt-12 text-base leading-relaxed text-foreground/80 sm:text-lg">
+        {siteConfig.bio}
+      </p>
     </PageShell>
   );
 }
