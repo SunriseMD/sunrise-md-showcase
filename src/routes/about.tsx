@@ -209,10 +209,19 @@ function AboutPage() {
                 )}
                 {typeof item === "string" ? (
                   <p>{item}</p>
-                ) : (
+                ) : "heading" in item ? (
                   <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
                     {item.heading}
                   </h3>
+                ) : (
+                  <>
+                    <p>{item.intro}</p>
+                    <ul className="mt-3 list-disc space-y-2 pl-6">
+                      {item.bullets.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+                  </>
                 )}
                 {[
                   ...(section.gallery && section.gallery.attachAfterParagraph === idx
