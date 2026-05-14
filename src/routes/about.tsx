@@ -34,22 +34,22 @@ const sections = [
   {
     title: "Biomedical Engineering & Device Design",
     subtitle: "Building around clinical need, cost, and durability",
-    gallery: {
-      attachAfterParagraph: 2,
-      columns: 2,
-      images: [
-        {
-          src: pneumaShoePrototypeImg,
-          alt: "Inside view of the medium-fidelity PneumaShoe prototype showing pumps, tubing, and circuitry.",
-          caption: "Inside of the medium-fidelity PneumaShoe prototype.",
-        },
-        {
-          src: pneumaShoeDisplayImg,
-          alt: "PneumaShoe user display with status LEDs and a pressure readout next to the inflatable cuff.",
-          caption: "PneumaShoe user display and cuff.",
-        },
-      ],
-    },
+    inlineImages: [
+      {
+        src: pneumaShoePrototypeImg,
+        alt: "Inside view of the medium-fidelity PneumaShoe prototype showing pumps, tubing, and circuitry.",
+        caption: "Inside of the medium-fidelity PneumaShoe prototype.",
+        side: "right",
+        attachToParagraph: 1,
+      },
+      {
+        src: pneumaShoeDisplayImg,
+        alt: "PneumaShoe user display with status LEDs and a pressure readout next to the inflatable cuff.",
+        caption: "PneumaShoe user display and cuff.",
+        side: "left",
+        attachToParagraph: 3,
+      },
+    ],
     body: [
       "Before becoming a physician, I trained as a biomedical engineer. That background taught me to approach healthcare problems by first understanding the user, the environment, the constraints, and the failure points.",
       "At Rice, I helped develop PneumaShoe, a low-cost, durable intermittent pneumatic compression device designed to prevent venous thromboembolism in low-resource settings. The project required more than technical design. It required understanding clinical workflows, cost constraints, durability requirements, and the realities of deployment in settings where conventional medical devices may be too expensive or difficult to maintain.",
@@ -110,22 +110,22 @@ const sections = [
   {
     title: "Outcomes Research & Clinical Due Diligence",
     subtitle: "Evaluating high-stakes decisions with evidence",
-    gallery: {
-      attachAfterParagraph: 1,
-      columns: 2,
-      images: [
-        {
-          src: atsAwardPresentationImg,
-          alt: "Presenting machine-learning research on donor lung discard at the American Thoracic Society conference.",
-          caption: "Presenting the Machine Learning Lung Allograft Discard Risk Index at ATS.",
-        },
-        {
-          src: atsAwardCheckImg,
-          alt: "Receiving the ATS Public Advisory Roundtable Scholarship award.",
-          caption: "Receiving the ATS Public Advisory Roundtable Scholarship for the Lung Allograft Discard Risk Index.",
-        },
-      ],
-    },
+    inlineImages: [
+      {
+        src: atsAwardPresentationImg,
+        alt: "Presenting machine-learning research on donor lung discard at the American Thoracic Society conference.",
+        caption: "Presenting the Machine Learning Lung Allograft Discard Risk Index at ATS.",
+        side: "right",
+        attachToParagraph: 1,
+      },
+      {
+        src: atsAwardCheckImg,
+        alt: "Receiving the ATS Public Advisory Roundtable Scholarship award.",
+        caption: "Receiving the ATS Public Advisory Roundtable Scholarship for the Lung Allograft Discard Risk Index.",
+        side: "left",
+        attachToParagraph: 2,
+      },
+    ],
     body: [
       "My research has also focused on high-stakes clinical decisions where data, uncertainty, and resource constraints intersect.",
       "In transplantation, I helped develop organ discard risk indices designed to better understand why donor organs are accepted or discarded. This work included research on pediatric liver allograft discard, heart transplantation discard risk, and machine-learning approaches to donor lung discard. The lung discard work was recognized with the **American Thoracic Society Public Advisory Roundtable Scholarship**.",
@@ -204,68 +204,92 @@ function AboutPage() {
             {section.subtitle}
           </p>
           <div className="mt-6 text-base leading-relaxed text-foreground/80 sm:text-lg [&>p+p]:mt-5">
-            {section.body.map((item, idx) => (
-              <Fragment key={idx}>
-                {section.image && section.image.attachToParagraph === idx && (
-                  <figure className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]">
-                    <img
-                      src={section.image.src}
-                      alt={section.image.alt}
-                      className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
-                      loading="lazy"
-                    />
-                    <figcaption className="mt-2 text-xs italic text-muted-foreground">
-                      {section.image.caption}
-                    </figcaption>
-                  </figure>
-                )}
-                {typeof item === "string" ? (
-                  <p>{renderBold(item)}</p>
-                ) : "heading" in item ? (
-                  <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
-                    {item.heading}
-                  </h3>
-                ) : (
-                  <>
-                    <p>{item.intro}</p>
-                    <ul className="mt-3 list-disc space-y-2 pl-6">
-                      {item.bullets.map((b) => (
-                        <li key={b}>{b}</li>
+            {section.body.map((item, idx) => {
+              const sectionAny = section as {
+                image?: { src: string; alt: string; caption: string; attachToParagraph: number };
+                inlineImages?: { src: string; alt: string; caption: string; side: "left" | "right"; attachToParagraph: number }[];
+                galleries?: { attachAfterParagraph: number; columns?: number; images: { src: string; alt: string; caption: string }[] }[];
+              };
+              const inlineHere = sectionAny.inlineImages?.filter((i) => i.attachToParagraph === idx) ?? [];
+              const galleriesHere = sectionAny.galleries?.filter((g) => g.attachAfterParagraph === idx) ?? [];
+              return (
+                <Fragment key={idx}>
+                  {sectionAny.image && sectionAny.image.attachToParagraph === idx && (
+                    <figure className="mb-5 sm:float-right sm:ml-6 sm:mb-3 sm:w-[55%] md:w-[48%]">
+                      <img
+                        src={sectionAny.image.src}
+                        alt={sectionAny.image.alt}
+                        className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
+                        loading="lazy"
+                      />
+                      <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                        {sectionAny.image.caption}
+                      </figcaption>
+                    </figure>
+                  )}
+                  {inlineHere.map((img) => (
+                    <figure
+                      key={img.src}
+                      className={`mb-5 sm:mb-3 sm:w-[42%] md:w-[38%] ${
+                        img.side === "left"
+                          ? "sm:float-left sm:mr-6"
+                          : "sm:float-right sm:ml-6"
+                      }`}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
+                        loading="lazy"
+                      />
+                      <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                        {img.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                  {typeof item === "string" ? (
+                    <p>{renderBold(item)}</p>
+                  ) : "heading" in item ? (
+                    <h3 className="mt-8 font-serif text-xl tracking-tight text-foreground first:mt-0 sm:text-2xl">
+                      {item.heading}
+                    </h3>
+                  ) : (
+                    <>
+                      <p>{item.intro}</p>
+                      <ul className="mt-3 list-disc space-y-2 pl-6">
+                        {item.bullets.map((b) => (
+                          <li key={b}>{b}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                  {galleriesHere.map((g, gIdx) => (
+                    <div
+                      key={gIdx}
+                      className={`clear-both my-6 grid grid-cols-1 gap-4 ${
+                        g.columns === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
+                      }`}
+                    >
+                      {g.images.map((img) => (
+                        <figure key={img.src}>
+                          <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-foreground/10 shadow-sm">
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <figcaption className="mt-2 text-xs italic text-muted-foreground">
+                            {img.caption}
+                          </figcaption>
+                        </figure>
                       ))}
-                    </ul>
-                  </>
-                )}
-                {[
-                  ...(section.gallery && section.gallery.attachAfterParagraph === idx
-                    ? [section.gallery]
-                    : []),
-                  ...(section.galleries
-                    ? section.galleries.filter((g) => g.attachAfterParagraph === idx)
-                    : []),
-                ].map((g, gIdx) => (
-                  <div
-                    key={gIdx}
-                    className={`my-6 grid grid-cols-1 gap-4 ${
-                      g.columns === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"
-                    }`}
-                  >
-                    {g.images.map((img) => (
-                      <figure key={img.src}>
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          className="w-full rounded-2xl border border-foreground/10 object-cover shadow-sm"
-                          loading="lazy"
-                        />
-                        <figcaption className="mt-2 text-xs italic text-muted-foreground">
-                          {img.caption}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
-              </Fragment>
-            ))}
+                    </div>
+                  ))}
+                </Fragment>
+              );
+            })}
             <div className="clear-both" />
           </div>
         </section>
