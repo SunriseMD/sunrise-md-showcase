@@ -25,8 +25,8 @@ function HomePage() {
     <PageShell>
       <div className="flex flex-col items-start gap-12 md:flex-row md:items-center md:gap-16">
         <div className="flex-shrink-0">
-          <div className="h-64 w-64 rounded-sm border border-border bg-background p-1.5 md:h-80 md:w-80">
-            <div className="h-full w-full overflow-hidden rounded-sm bg-muted">
+          <div className="h-64 w-64 rounded-full border border-border bg-background p-1.5 md:h-80 md:w-80">
+            <div className="h-full w-full overflow-hidden rounded-full bg-muted">
               <img
                 src={siteConfig.portraitUrl}
                 alt={`Portrait of ${siteConfig.name}`}
