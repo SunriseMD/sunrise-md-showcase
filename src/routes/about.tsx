@@ -107,6 +107,7 @@ const sections: Section[] = [
       {
         afterParagraph: 2,
         columns: 1,
+        variant: "floatRight",
         images: [
           {
             src: malawiOxygenImg,
