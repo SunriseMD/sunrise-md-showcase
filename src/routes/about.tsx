@@ -185,6 +185,38 @@ function Paragraph({ html }: { html: string }) {
 }
 
 function GalleryBlock({ gallery }: { gallery: Gallery }) {
+  if (gallery.variant === "floatRight") {
+    const img = gallery.images[0];
+    return (
+      <figure className="mb-4 overflow-hidden rounded-xl border border-border bg-card shadow-sm sm:float-right sm:ml-6 sm:mt-1 sm:w-[40%]">
+        <img
+          src={img.src}
+          alt={img.alt}
+          className="h-auto w-full object-cover"
+          loading="lazy"
+        />
+        <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+          {img.caption}
+        </figcaption>
+      </figure>
+    );
+  }
+  if (gallery.variant === "smallLeft") {
+    const img = gallery.images[0];
+    return (
+      <figure className="my-6 max-w-[260px] overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+        <img
+          src={img.src}
+          alt={img.alt}
+          className="h-auto w-full object-cover"
+          loading="lazy"
+        />
+        <figcaption className="px-3 py-2 text-xs text-muted-foreground">
+          {img.caption}
+        </figcaption>
+      </figure>
+    );
+  }
   const colClass =
     gallery.columns === 3
       ? "sm:grid-cols-3"
@@ -235,10 +267,19 @@ function SectionBlock({ section }: { section: Section }) {
       </p>
       <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/85">
         {section.body.map((block, idx) => {
-          const galleriesHere =
-            section.galleries?.filter((g) => g.afterParagraph === idx) ?? [];
+          const before =
+            section.galleries?.filter(
+              (g) => g.afterParagraph === idx && g.variant === "floatRight",
+            ) ?? [];
+          const after =
+            section.galleries?.filter(
+              (g) => g.afterParagraph === idx && g.variant !== "floatRight",
+            ) ?? [];
           return (
             <Fragment key={idx}>
+              {before.map((g, gi) => (
+                <GalleryBlock key={`b${gi}`} gallery={g} />
+              ))}
               {typeof block === "string" ? (
                 <Paragraph html={block} />
               ) : block.kind === "heading" ? (
@@ -248,7 +289,7 @@ function SectionBlock({ section }: { section: Section }) {
               ) : block.kind === "bullets" ? (
                 <div>
                   <p>{block.intro}</p>
-                  <ul className="mt-3 list-disc space-y-1.5 pl-6">
+                  <ul className="mt-3 list-disc space-y-1.5 pl-6 marker:text-brand-dark">
                     {block.items.map((b) => (
                       <li key={b}>{b}</li>
                     ))}
@@ -257,12 +298,13 @@ function SectionBlock({ section }: { section: Section }) {
               ) : (
                 <CalloutBlock emoji={block.emoji} html={block.html} />
               )}
-              {galleriesHere.map((g, gi) => (
-                <GalleryBlock key={gi} gallery={g} />
+              {after.map((g, gi) => (
+                <GalleryBlock key={`a${gi}`} gallery={g} />
               ))}
             </Fragment>
           );
         })}
+        <div className="clear-both" />
       </div>
     </section>
   );
