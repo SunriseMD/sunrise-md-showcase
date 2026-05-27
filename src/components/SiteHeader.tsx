@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Tahir" },
-  { to: "/about-sunrisemd", label: "Our Approach" },
+  { to: "/approach", label: "Our Approach" },
   { to: "/portfolio", label: "Advising Portfolio" },
   { to: "/contact", label: "Contact Us" },
 ] as const;

@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ApproachRouteImport } from './routes/approach'
-import { Route as AboutSunrisemdRouteImport } from './routes/about-sunrisemd'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -31,11 +30,6 @@ const ApproachRoute = ApproachRouteImport.update({
   path: '/approach',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutSunrisemdRoute = AboutSunrisemdRouteImport.update({
-  id: '/about-sunrisemd',
-  path: '/about-sunrisemd',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -50,7 +44,6 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/about-sunrisemd': typeof AboutSunrisemdRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
@@ -58,7 +51,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/about-sunrisemd': typeof AboutSunrisemdRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
@@ -67,42 +59,21 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/about-sunrisemd': typeof AboutSunrisemdRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/about-sunrisemd'
-    | '/approach'
-    | '/contact'
-    | '/portfolio'
+  fullPaths: '/' | '/about' | '/approach' | '/contact' | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/about-sunrisemd'
-    | '/approach'
-    | '/contact'
-    | '/portfolio'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/about-sunrisemd'
-    | '/approach'
-    | '/contact'
-    | '/portfolio'
+  to: '/' | '/about' | '/approach' | '/contact' | '/portfolio'
+  id: '__root__' | '/' | '/about' | '/approach' | '/contact' | '/portfolio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AboutSunrisemdRoute: typeof AboutSunrisemdRoute
   ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -131,13 +102,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApproachRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about-sunrisemd': {
-      id: '/about-sunrisemd'
-      path: '/about-sunrisemd'
-      fullPath: '/about-sunrisemd'
-      preLoaderRoute: typeof AboutSunrisemdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -158,7 +122,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AboutSunrisemdRoute: AboutSunrisemdRoute,
   ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
   PortfolioRoute: PortfolioRoute,
