@@ -158,6 +158,7 @@ const sections: Section[] = [
       {
         afterParagraph: 2,
         columns: 1,
+        variant: "smallLeft",
         images: [
           {
             src: atsAwardPresentationImg,
