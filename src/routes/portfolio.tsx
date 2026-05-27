@@ -82,12 +82,10 @@ function PortfolioPage() {
                 <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-dark">
                   Advisory Focus Areas
                 </h3>
-                <ul className="mt-3 space-y-2 text-base text-foreground/85 marker:text-brand-dark">
-                  <ul className="list-disc space-y-2 pl-5 marker:text-brand-dark">
-                    {company.focusAreas.map((area) => (
-                      <li key={area}>{area}</li>
-                    ))}
-                  </ul>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-base text-foreground/85 marker:text-brand-dark">
+                  {company.focusAreas.map((area) => (
+                    <li key={area}>{area}</li>
+                  ))}
                 </ul>
               </div>
             )}
