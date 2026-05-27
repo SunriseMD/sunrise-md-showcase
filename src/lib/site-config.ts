@@ -40,7 +40,7 @@ export const portfolio: PortfolioCompany[] = [
       "Product feedback and diagnosis-builder refinement",
       "Physician builder recruitment",
     ],
-    url: "https://withregard.com",
+    url: "https://www.regard.com/",
   },
   {
     name: "Impiricus",
