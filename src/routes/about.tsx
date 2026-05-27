@@ -30,7 +30,12 @@ export const Route = createFileRoute("/about")({
 });
 
 type GalleryImage = { src: string; alt: string; caption: string };
-type Gallery = { afterParagraph: number; columns: 1 | 2 | 3; images: GalleryImage[] };
+type Gallery = {
+  afterParagraph: number;
+  columns: 1 | 2 | 3;
+  images: GalleryImage[];
+  variant?: "floatRight" | "smallLeft";
+};
 type Callout = { kind: "callout"; emoji: string; html: string };
 type Heading = { kind: "heading"; text: string };
 type BulletList = { kind: "bullets"; intro: string; items: string[] };
