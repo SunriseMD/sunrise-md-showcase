@@ -80,7 +80,7 @@ function ContactPage() {
         </p>
       </header>
 
-      <div className="grid gap-8 border-t border-border pt-12 pb-16 md:grid-cols-2">
+      <div className="grid gap-8 border-t border-border pt-12 pb-16 md:grid-cols-[1fr_1.3fr]">
         {/* Left: intro + contact links */}
         <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-sm sm:p-9">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand/60 via-brand to-brand/60" />
