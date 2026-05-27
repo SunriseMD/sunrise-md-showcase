@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 
-export const Route = createFileRoute("/about-sunrisemd")({
+export const Route = createFileRoute("/approach")({
   head: () => ({
     meta: [
       { title: "Our Approach — SunriseMD" },
