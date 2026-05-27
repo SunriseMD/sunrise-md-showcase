@@ -17,10 +17,10 @@ export function SiteHeader() {
             key={item.to}
             to={item.to}
             activeOptions={{ exact: item.to === "/" }}
-            className="rounded-full px-5 py-2 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+            className="rounded-full border border-border bg-card px-5 py-2 text-sm font-medium text-foreground transition-colors hover:border-muted-foreground/40 hover:bg-muted hover:text-foreground"
             activeProps={{
               className:
-                "rounded-full bg-brand-soft px-5 py-2 text-sm font-medium text-brand",
+                "rounded-full border border-brand/50 bg-brand-soft px-5 py-2 text-sm font-medium text-brand",
             }}
           >
             {item.label}
