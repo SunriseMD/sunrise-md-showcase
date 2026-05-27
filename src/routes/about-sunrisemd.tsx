@@ -78,11 +78,11 @@ function AboutSunriseMDPage() {
               product positioning, clinical workflow review, provider-facing strategy,
               diligence preparation, and investor-facing materials.
             </p>
-            <div className="mt-2 flex gap-3 rounded-xl border-l-4 border-brand bg-brand-soft/70 px-4 py-3 italic text-foreground/90">
-              <span className="text-brand" aria-hidden>
+            <div className="mt-2 flex gap-3 rounded-xl border-l-4 border-brand bg-brand-soft/70 px-4 py-3 text-foreground/90">
+              <span className="text-brand not-italic" aria-hidden>
                 ✦
               </span>
-              <p>
+              <p className="italic">
                 Healthcare strategy works best when business goals, clinical reality,
                 and implementation are aligned from the start.
               </p>
