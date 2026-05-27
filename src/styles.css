@@ -61,6 +61,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
+  --color-brand-dark: var(--brand-dark);
 }
 
 :root {
@@ -68,6 +69,7 @@
   --background: oklch(0.985 0.005 240);
   --brand: oklch(0.62 0.18 255);
   --brand-soft: oklch(0.95 0.04 250);
+  --brand-dark: oklch(0.45 0.15 255);
   --_unused: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
