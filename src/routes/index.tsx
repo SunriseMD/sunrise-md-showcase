@@ -11,10 +11,7 @@ export const Route = createFileRoute("/")({
         content: `${siteConfig.tagline}. ${siteConfig.bio.slice(0, 120)}`,
       },
       { property: "og:title", content: "SunriseMD — Healthcare Consulting" },
-      {
-        property: "og:description",
-        content: siteConfig.tagline,
-      },
+      { property: "og:description", content: siteConfig.tagline },
     ],
   }),
   component: HomePage,
@@ -23,43 +20,51 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <PageShell>
-      <div className="flex flex-col items-start gap-12 md:flex-row md:items-center md:gap-16">
-        <div className="flex-shrink-0">
-          <div className="h-64 w-64 rounded-full border border-border bg-background p-1.5 md:h-80 md:w-80">
-            <div className="h-full w-full overflow-hidden rounded-full bg-muted">
-              <img
-                src={siteConfig.portraitUrl}
-                alt={`Portrait of ${siteConfig.name}`}
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
-              />
+      <section className="pt-10 pb-12">
+        <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:gap-10">
+          <div className="flex-shrink-0">
+            <div className="h-44 w-44 rounded-full border-2 border-brand/30 bg-card p-1.5 sm:h-52 sm:w-52">
+              <div className="h-full w-full overflow-hidden rounded-full bg-muted">
+                <img
+                  src={siteConfig.portraitUrl}
+                  alt={`Portrait of ${siteConfig.name}`}
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex flex-col text-left">
-          <h1 className="mb-6 font-serif text-4xl tracking-tight text-foreground sm:text-5xl">
-            Hi, I'm {siteConfig.name}
-          </h1>
+          <div className="flex flex-col text-center sm:text-left">
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
+              Hi, I'm
+              <br />
+              <span className="text-brand">{siteConfig.name}</span>
+            </h1>
 
-          <div className="space-y-1.5">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
+            <p className="mt-5 text-base font-semibold text-brand sm:text-lg">
               {siteConfig.tagline}
             </p>
-            <p className="text-xs font-light text-muted-foreground/80 sm:text-sm">
-              {siteConfig.subTagline}
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Chief Fellow — Pulmonary, Critical Care,
+              <br className="hidden sm:block" /> and Sleep Medicine Fellowship — NYC
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-12 h-px w-full bg-border" />
-
-      <p className="mt-12 text-base leading-relaxed text-foreground/80 sm:text-lg">
-        {siteConfig.bio}
-      </p>
+      <section className="pb-16">
+        <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+          <div className="h-1 w-full bg-gradient-to-r from-brand/60 via-brand to-brand/60" />
+          <div className="px-6 py-8 sm:px-10 sm:py-10">
+            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
+              {siteConfig.bio}
+            </p>
+          </div>
+        </div>
+      </section>
     </PageShell>
   );
 }
