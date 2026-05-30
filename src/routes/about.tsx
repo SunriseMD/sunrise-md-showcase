@@ -326,7 +326,7 @@ function AboutPage() {
         <div className="space-y-5 text-base leading-relaxed text-foreground/85">
           <p>
             I&apos;m Tahir Hafeez Malik, MD, a pulmonary, critical care, and sleep
-            medicine physician at Mount Sinai with a background in biomedical
+            medicine physician in New York City with a background in biomedical
             engineering, global health, outcomes research, and health system
             implementation. My work has consistently focused on one question:
           </p>
