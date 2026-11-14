@@ -3,9 +3,9 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const navItems = [
-  { href: "/#about", label: "About" },
   { href: "/#approach", label: "Approach" },
   { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
 ];
 

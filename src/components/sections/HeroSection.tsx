@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export function HeroSection() {
@@ -30,9 +30,6 @@ export function HeroSection() {
           alt={`Portrait of ${siteConfig.name}`}
           className="aspect-[4/5] w-full object-cover"
         />
-      </div>
-      <div className="mt-20 flex h-12 items-center border-l border-border pl-4 text-muted-foreground">
-        <ArrowDown className="h-4 w-4" aria-hidden />
       </div>
     </section>
   );
