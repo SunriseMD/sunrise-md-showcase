@@ -1,6 +1,6 @@
 // Edit this file to update your site content.
 
-import portraitUrl from "@/assets/tahir-portrait.jpg";
+import portraitUrl from "@/assets/tahir-headshot.jpg";
 
 export const siteConfig = {
   company: "SunriseMD",

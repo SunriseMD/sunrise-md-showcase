@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import portraitUrl from "@/assets/tahir-portrait.jpg";
 import malawiOxygenImg from "@/assets/malawi-oxygen-repair.jpg";
 import pneumaShoePrototypeImg from "@/assets/pneumashoe-prototype.jpg";
 import pneumaShoeDisplayImg from "@/assets/pneumashoe-display.jpg";
@@ -290,26 +289,18 @@ function SectionBlock({ section }: { section: Section }) {
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 border-t border-border py-24">
-      <div className="grid items-start gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16">
-        <div>
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            About Tahir
-          </p>
-          <blockquote className="mt-6 text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
-            &ldquo;How do we take promising healthcare ideas and determine whether they are
-            clinically meaningful, operationally feasible, and ready for real-world
-            implementation?&rdquo;
-          </blockquote>
-          <p className="mt-6 text-base leading-relaxed text-foreground/80">
-            Physician · Biomedical Engineer · Implementation-Minded Strategist
-          </p>
-        </div>
-        <img
-          src={portraitUrl}
-          alt="Portrait of Tahir Malik"
-          className="aspect-[4/5] w-full object-cover"
-          loading="lazy"
-        />
+      <div className="max-w-2xl">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          About Tahir
+        </p>
+        <blockquote className="mt-6 text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
+          &ldquo;How do we take promising healthcare ideas and determine whether they are
+          clinically meaningful, operationally feasible, and ready for real-world
+          implementation?&rdquo;
+        </blockquote>
+        <p className="mt-6 text-base leading-relaxed text-foreground/80">
+          Physician · Biomedical Engineer · Implementation-Minded Strategist
+        </p>
       </div>
       <div className="mt-16 border-t border-border py-14">
         <div className="space-y-5 text-base leading-relaxed text-foreground/85">
