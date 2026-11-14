@@ -1,24 +1,31 @@
-# Move sunrisemd.com from Lovable to Cloudflare
+# Convert SunriseMD to a single scrolling page
 
-These are steps you take yourself; no code changes are needed.
+Keep the current colors, fonts, photos and wording. Change the layout to one long page in the "Practice First" order, with a cleaner editorial-style header.
 
-## 1. Disconnect the domain in Lovable
-- Open Project Settings -> Domains (where you are now).
-- On sunrisemd.com, open the "..." menu. If it is marked Primary, click "Unset as primary" first.
-- Then choose Remove / Disconnect. Do the same for www.sunrisemd.com if it is still listed.
-- Your site keeps running at sunrisemd-showcase.lovable.app, so nothing goes offline on Lovable's side.
+## New page order
+1. **Intro**: round portrait, "Hi, I'm Tahir", tagline, bio card, plus a "Get in touch" button that scrolls to Contact
+2. **Our Approach**: intro card with the ✦ quote, then the 2x2 "How I Help" cards
+3. **Advising Portfolio**: Regard and Impiricus cards, stacked vertically (no sideways scrolling)
+4. **About Tahir**: the full background with all four sections, photo galleries, the Malawi photo with wrapped text, and the awards list
+5. **Contact Us**: the two side-by-side panels (links and message form)
+6. Footer (unchanged)
 
-## 2. Update DNS (wherever your DNS is managed, likely Cloudflare)
-- Delete the old Lovable records:
-  - A records for `@` and `www` pointing to Lovable's IP
-  - TXT records `_lovable` and `_lovable.www` (`lovable_verify=...`)
-- Then in Cloudflare: Workers & Pages -> your project -> Settings -> Domains & Routes (or Custom domains) -> Add `sunrisemd.com` and `www.sunrisemd.com`. Cloudflare creates the right records for you.
+## Editorial-style touches
+- **Header**: "SunriseMD" name on the left, plain text links on the right (About, Approach, Portfolio, Contact). No pills. The current section gets a thin blue underline. The header stays at the top of the screen while scrolling, with a light divider line.
+- **Phone layout**: the links fold into a small menu button on the right.
+- **Section openers**: each section starts with a small blue numbered label (e.g. "01 — Our Approach"), a large left-aligned heading, and a thin line, in place of the current centered headings.
+- **Spacing**: more room between sections, and a slightly wider page for the Portfolio and Contact sections.
 
-## 3. If you bought the domain through Lovable
-- You can move it out with a transfer: Settings -> Workspace domains -> your domain -> unlock it and get the transfer (auth) code, then start a transfer in to Cloudflare Registrar. Or keep it registered with Lovable and point its nameservers to Cloudflare.
+## Navigation
+- Clicking a link scrolls smoothly to its section. The header covers no content because each section leaves room for it.
+- The link for the section on screen is highlighted automatically as you scroll.
+- Shared links like sunrisemd.com/#portfolio open straight to that section.
+- Old addresses (/about, /approach, /portfolio, /contact) send visitors to the matching section of the new page, so existing links keep working.
 
-## 4. Check
-- Wait a few minutes (up to a few hours for DNS), then open https://sunrisemd.com and confirm the Cloudflare version loads with a valid lock icon.
-- Optionally, unpublish the Lovable copy later in Project Settings.
-
-Tip: do step 2's Cloudflare "add custom domain" right after step 1 to keep downtime to a few minutes.
+## Technical details
+- Move each page's content into its own section component (`src/components/sections/*`), reusing the existing JSX and the GalleryBlock helpers from about.tsx.
+- `src/routes/index.tsx` renders the sections in order, each with `id` and `scroll-mt-*` set.
+- Rewrite SiteHeader: wordmark plus right-aligned anchor links, an IntersectionObserver scroll spy, and a Sheet menu on mobile.
+- Replace the old route files with small redirect routes (`beforeLoad`, redirect to `/` with a `hash`), so URLs stay valid.
+- Merge the head() metadata into the index route.
+- Leave styles.css tokens unchanged. Add `scroll-behavior: smooth` to html.
