@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Linkedin, Mail, FileText, ArrowRight } from "lucide-react";
+import { Linkedin, Mail, FileText, ArrowRight, Calendar } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 
@@ -8,6 +8,13 @@ export function ContactSection() {
   const [firstName, setFirstName] = useState("");
 
   const links = [
+    {
+      Icon: Calendar,
+      label: "Calendly",
+      value: "Book a 30-minute call",
+      href: siteConfig.calendly,
+      external: true,
+    },
     {
       Icon: Mail,
       label: "Email",
