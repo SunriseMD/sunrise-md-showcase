@@ -225,9 +225,9 @@ function GalleryBlock({ gallery }: { gallery: Gallery }) {
   );
 }
 
-function CalloutBlock({ emoji, html }: { emoji: string; html: string }) {
+function CalloutBlock({ html }: { html: string }) {
   return (
-    <div className="my-6 border-l-2 border-brand pl-5 text-foreground/90" data-emoji={emoji ? undefined : undefined}>
+    <div className="my-6 border-l-2 border-brand pl-5 text-foreground/90">
       <p className="leading-relaxed" dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
@@ -273,7 +273,7 @@ function SectionBlock({ section }: { section: Section }) {
                   </ul>
                 </div>
               ) : (
-                <CalloutBlock emoji={block.emoji} html={block.html} />
+                <CalloutBlock html={block.html} />
               )}
               {after.map((g, gi) => (
                 <GalleryBlock key={`a${gi}`} gallery={g} />
