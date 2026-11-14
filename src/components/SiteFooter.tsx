@@ -1,33 +1,30 @@
-import { Linkedin, Mail, FileText } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   const items = [
-    { href: siteConfig.linkedin, label: "LinkedIn", Icon: Linkedin, external: true },
-    { href: `mailto:${siteConfig.email}`, label: "Email", Icon: Mail, external: false },
-    { href: siteConfig.cvUrl, label: "CV", Icon: FileText, external: true },
+    { href: `mailto:${siteConfig.email}`, label: "Email", external: false },
+    { href: siteConfig.linkedin, label: "LinkedIn", external: true },
+    { href: siteConfig.cvUrl, label: "CV", external: true },
   ];
-
   return (
-    <footer className="w-full border-t border-border bg-card">
-      <div className="mx-auto w-full max-w-3xl px-4 py-10">
-        <div className="flex items-center justify-center gap-3">
-          {items.map(({ href, label, Icon, external }) => (
+    <footer className="w-full border-t border-border">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 sm:flex-row">
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} {siteConfig.company}
+        </p>
+        <div className="flex gap-8">
+          {items.map(({ href, label, external }) => (
             <a
               key={label}
               href={href}
-              aria-label={label}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-brand-soft hover:text-brand"
+              className="text-sm text-muted-foreground transition-colors hover:text-brand"
             >
-              <Icon className="h-4 w-4" />
+              {label}
             </a>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} {siteConfig.company}. All rights reserved.
-        </p>
       </div>
     </footer>
   );
