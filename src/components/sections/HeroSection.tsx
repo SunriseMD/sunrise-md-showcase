@@ -14,9 +14,10 @@ export function HeroSection() {
             <em className="text-brand">clinical reality.</em>
           </h1>
           <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            I&apos;m {siteConfig.name}, {siteConfig.subTagline}. Through{" "}
-            {siteConfig.company}, I partner with founders and operators to translate clinical
-            insight into scalable products.
+            I&apos;m {siteConfig.name}, a physician-engineer and the founder of{" "}
+            {siteConfig.company}, a consulting firm that helps health-tech companies decide
+            whether an idea is clinically meaningful, operationally feasible, and ready for
+            real-world implementation.
           </p>
           <a
             href="#contact"

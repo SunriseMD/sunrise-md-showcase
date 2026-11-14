@@ -13,17 +13,7 @@ export function PortfolioSection() {
       <div className="mt-14 grid gap-16 md:grid-cols-2 md:gap-12">
         {portfolio.map((company) => (
           <article key={company.name}>
-            <a
-              href={company.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex aspect-[4/3] items-center justify-center bg-brand-soft transition-colors hover:bg-muted"
-            >
-              <span className="text-4xl font-bold tracking-tight text-foreground transition-colors group-hover:text-brand sm:text-5xl">
-                {company.name}
-              </span>
-            </a>
-            <div className="mt-5 flex items-baseline justify-between gap-4">
+            <div className="flex items-baseline justify-between gap-4">
               <h3 className="text-xl font-semibold text-foreground">{company.name}</h3>
               <a
                 href={company.url}
