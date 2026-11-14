@@ -293,7 +293,7 @@ function SectionBlock({ section }: { section: Section }) {
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 border-t border-border py-24">
-      <div className="mx-auto max-w-2xl text-center">
+      <div className="max-w-2xl">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
           About Tahir
         </p>
