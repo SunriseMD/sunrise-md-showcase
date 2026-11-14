@@ -171,6 +171,8 @@ function GalleryBlock({ gallery }: { gallery: Gallery }) {
         <img
           src={img.src}
           alt={img.alt}
+          width={1920}
+          height={1440}
           className="h-auto w-full object-cover"
           loading="lazy"
         />
@@ -187,6 +189,8 @@ function GalleryBlock({ gallery }: { gallery: Gallery }) {
         <img
           src={img.src}
           alt={img.alt}
+          width={1920}
+          height={1440}
           className="h-auto w-full object-cover"
           loading="lazy"
         />
@@ -289,7 +293,7 @@ function SectionBlock({ section }: { section: Section }) {
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 border-t border-border py-24">
-      <div className="max-w-2xl">
+      <div className="mx-auto max-w-2xl text-center">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
           About Tahir
         </p>
