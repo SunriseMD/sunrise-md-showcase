@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { portfolio } from "@/lib/site-config";
 
 export function PortfolioSection() {
@@ -13,18 +12,15 @@ export function PortfolioSection() {
       <div className="mt-14 grid gap-16 md:grid-cols-2 md:gap-12">
         {portfolio.map((company) => (
           <article key={company.name}>
-            <div className="flex items-baseline justify-between gap-4">
-              <h3 className="text-xl font-semibold text-foreground">{company.name}</h3>
-              <a
-                href={company.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-brand"
-              >
-                Visit <ArrowUpRight className="h-4 w-4" />
-              </a>
-            </div>
-            <p className="mt-1 text-sm text-muted-foreground">{company.tags.join(" · ")}</p>
+            <a
+              href={company.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full border border-brand/50 bg-brand-soft px-5 py-1.5 text-2xl font-semibold tracking-tight text-brand-dark transition-colors hover:border-brand hover:bg-brand/10"
+            >
+              {company.name}
+            </a>
+            <p className="mt-3 text-sm text-muted-foreground">{company.tags.join(" · ")}</p>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/80">
               {company.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
