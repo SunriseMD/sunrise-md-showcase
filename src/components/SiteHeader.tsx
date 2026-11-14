@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
@@ -11,10 +11,24 @@ const navItems = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <header className="sticky top-0 z-40 w-full bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <a href="/#top" className="text-xl font-bold tracking-tight text-foreground">
+        <a
+          href="/#top"
+          className={`font-bold tracking-tight text-foreground transition-all duration-200 ${
+            scrolled ? "text-2xl" : "text-xl"
+          }`}
+        >
           SunriseMD
         </a>
         <nav className="hidden items-center gap-10 sm:flex">
