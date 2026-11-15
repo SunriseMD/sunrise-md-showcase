@@ -21,9 +21,9 @@ export function HeroSection() {
           </p>
           <a
             href="#contact"
-            className="mt-10 inline-flex items-center gap-2 text-[1.75rem] font-medium text-foreground transition-colors hover:text-brand"
+            className="mt-10 inline-flex items-center gap-2 text-[1.3125rem] font-medium text-foreground transition-colors hover:text-brand"
           >
-            Get in touch <ArrowRight className="h-6 w-6" />
+            Get in touch <ArrowRight className="h-5 w-5" />
           </a>
         </div>
         <img
