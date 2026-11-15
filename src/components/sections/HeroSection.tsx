@@ -21,7 +21,7 @@ export function HeroSection() {
           </p>
           <a
             href="#contact"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-brand"
+            className="mt-10 inline-flex items-center gap-2 text-base font-medium text-foreground transition-colors hover:text-brand sm:text-lg"
           >
             Get in touch <ArrowRight className="h-4 w-4" />
           </a>
